@@ -112,11 +112,11 @@ but for 00:00.1 I have not found the device. If anybody knows how to list all de
 
 **Quote from Penguin tamer https://translate.google.com/translate?hl=en&sl=de&tl=en&u=https%3A%2F%2Fthinkpad-forum.de%2Fthreads%2F217551-Boot-Parameter-f%25FCr-E585-bzw-f%25FCr-AMD-Ryzen-allgemein-besonders-ab-Kernel-4-20-x%3Fp%3D2176002%23post2176002**
 
-*ivrs_ioapic: correction IOMMU Adresses in BIOS.*
+***ivrs_ioapic**: correction IOMMU Adresses in BIOS.*
 
-*libata.force: No hardware reset on the SATA controller. So that the computer wakes up after suspend to ram.*
+***libata.force**: No hardware reset on the SATA controller. So that the computer wakes up after suspend to ram.*
 
-*iommu=pt: pass through for iommu, without this option, X does not seem to work Kernel 4.20.0.*
+***iommu=pt**: pass through for iommu, without this option, X does not seem to work Kernel 4.20.0.*
 
 
 
