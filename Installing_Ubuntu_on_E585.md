@@ -92,8 +92,24 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
     [    0.851877] AMD-Vi:   DEV_SPECIAL(IOAPIC[34])                devid: 00:00.1
     [    1.171028] AMD-Vi: IOMMU performance counters supported
 
+*Resolving devid 00:14.0 was easy via lspci:*
+
+*00:14.0 SMBus: Advanced Micro Devices, Inc. [AMD] FCH SMBus Controller (rev 61)
+but for 00:00.1 I have not found the device. If anybody knows how to list all device ids and their associate devices/drivers/etc, please mail me.*
+
+
+*Sources/References:*
+
+    https://ubuntuforums.org/showthread.php?t=2254677
+    https://superuser.com/questions/1052023/ioapic0-not-in-ivrs-table
+    https://lwn.net/Articles/664999/
+    https://01.org/linux-acpi/utilities
+    https://support.amd.com/TechDocs/48882_IOMMU.pdf
+
+
+
 Source(s): https://forum.level1techs.com/t/lenovo-thinkpad-e585-ryzen-2500u-vega-8-review-impressions-linux-etc/130307
 
 https://evilazrael.de/comment/914
 
-All the credits goes the person(s) making this happen. cited in the source. Thanks.
+All the credits goes the person(s) for making this happen cited in the source. Thanks you.
