@@ -39,7 +39,7 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
     sudo nano /etc/default/grub
 
 
-1. Add GRUB_CMDLINE_LINUX="**ivrs_ioapic[32]=00:14.0**"
+1. **Add** GRUB_CMDLINE_LINUX="**ivrs_ioapic[32]=00:14.0**"
 2. It should look like this
 3. 
 
@@ -69,4 +69,31 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
 
 ## Done
 
+
+## What does ivrs_ioapic[32]=00:14.0 do?
+
+**Quote from eazrael on https://evilazrael.de/comment/914**
+
+*Ok, this is really a firmware bug, the ACPI IVRS table lacks at least one entry. Adding ivrs_ioapic[32]=00:14.0 instead of intremap=off is sufficient to make the system boot until Lenovo releases an UEFI update with a working IVRS table. At least UEFI 1.27 (2018-07-24) needs this override. And spec_store_bypass_disable=prctl is still needed for Ubuntu & co.*
+
+*The clue is the line "[Firmware Bug]: AMD-Vi: IOAPIC[32] not in IVRS table". I decompiled the ACPI tables, started to read the AMD documentation, but in the end I just guessed the 32 from the error message and 00:14.0 from the lspci output and the Stack Overflow/Ubuntu forum entries.  Interesting stuff, but too much to read in my little time.* 
+
+*What was helpful is the Linux boot parameter amd_iommu_dump=1 which will dump information from the IVRS table:*
+
+    [    0.851042] AMD-Vi: Using IVHD type 0x11
+    [    0.851401] AMD-Vi: device: 00:00.2 cap: 0040 seg: 0 flags: b0 info 0000
+    [    0.851401] AMD-Vi:        mmio-addr: 00000000feb80000
+    [    0.851430] AMD-Vi:   DEV_SELECT_RANGE_START  devid: 00:01.0 flags: 00
+    [    0.851431] AMD-Vi:   DEV_RANGE_END           devid: ff:1f.6
+    [    0.851870] AMD-Vi:   DEV_ALIAS_RANGE                 devid: ff:00.0 flags: 00   devid_to: 00:14.4
+    [    0.851871] AMD-Vi:   DEV_RANGE_END           devid: ff:1f.7
+    [    0.851875] AMD-Vi:   DEV_SPECIAL(HPET[0])           devid: 00:14.0
+    [    0.851876] AMD-Vi:   DEV_SPECIAL(IOAPIC[33])                devid: 00:14.0
+    [    0.851877] AMD-Vi:   DEV_SPECIAL(IOAPIC[34])                devid: 00:00.1
+    [    1.171028] AMD-Vi: IOMMU performance counters supported
+
 Source(s): https://forum.level1techs.com/t/lenovo-thinkpad-e585-ryzen-2500u-vega-8-review-impressions-linux-etc/130307
+
+https://evilazrael.de/comment/914
+
+All the credits goes the person(s) making this happen. cited in the source. Thanks.
