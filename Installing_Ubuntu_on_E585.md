@@ -4,6 +4,8 @@
 
 [Lenovo E585 support website](https://pcsupport.lenovo.com/nl/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-e585-type-20kv/downloads)
 
+Firmware updates can be done with an USB flash drive.
+
 ## Get Ubuntu 18.04.x LTS.
 
 [Ubuntu 18.04.2 LTS (Bionic Beaver)](http://releases.ubuntu.com/18.04/)
@@ -20,13 +22,13 @@
 2. **make sure to hold or press SHIFT a couple of times to enter the GRUB menu.**
 3. Highlight "**Installing Ubuntu**"
 4. Press the "**e**" key on your keyboard to edit.
-5. add without quotes "**ivrs_ioapic (32)=00:14.0**" to the list.
+5. add without quotes "**ivrs_ioapic[32]=00:14.0 ivrs_ioapic[33]=00:00.1 clocksource=hpet libata.force=1:nohrst iommu=pt**" to the list.
 6. 
 
     setparams 'Try Ubuntu without Installing'
 
             set gfxpayload-keep
-            linux         /casper/vmlinuz file/cdrom/preseed/ubuntu.seed boot=casper quiet splash -- ivrs_ioapic (32)=00:14.0
+            linux         /casper/vmlinuz file/cdrom/preseed/ubuntu.seed boot=casper quiet splash -- ivrs_ioapic[32]=00:14.0 ivrs_ioapic[33]=00:00.1 clocksource=hpet libata.force=1:nohrst iommu=pt
             initrd        /casper/initrd
 
 
@@ -39,7 +41,7 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
     sudo nano /etc/default/grub
 
 
-1. **Add** GRUB_CMDLINE_LINUX="**ivrs_ioapic[32]=00:14.0**"
+1. **Add** GRUB_CMDLINE_LINUX="**ivrs_ioapic[32]=00:14.0 ivrs_ioapic[33]=00:00.1 clocksource=hpet libata.force=1:nohrst iommu=pt**"
 2. It should look like this
 3. 
 
@@ -55,7 +57,7 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
     GRUB_TIMEOUT=10
     GRUB_DISTRIBUTOR=`lsb_release -i -s 2>    /dev/null || echo Debian`
     GRUB_CMDLINE_LINUX_DEFAULT="quiet     splash"
-    GRUB_CMDLINE_LINUX="ivrs_ioapic[32]=00:14.0"
+    GRUB_CMDLINE_LINUX="ivrs_ioapic[32]=00:14.0 ivrs_ioapic[33]=00:00.1 clocksource=hpet libata.force=1:nohrst iommu=pt"
 
     # Uncomment to enable BadRAM filtering,    modify to suit your needs
     # This works with Linux (no patch     required) and with any kernel that    obtains
@@ -70,7 +72,7 @@ Open your terminal with the keys **CTRL + ALT + T** and do the following:
 ## Done
 
 
-## What does ivrs_ioapic[32]=00:14.0 do?
+## Explanation about 'ivrs_ioapic[32]=00:14.0 ivrs_ioapic[33]=00:00.1 clocksource=hpet libata.force=1:nohrst iommu=pt'.
 
 **Quote from eazrael on https://evilazrael.de/comment/914**
 
@@ -106,10 +108,24 @@ but for 00:00.1 I have not found the device. If anybody knows how to list all de
     https://01.org/linux-acpi/utilities
     https://support.amd.com/TechDocs/48882_IOMMU.pdf
 
+---
+
+**Quote from Penguin tamer https://translate.google.com/translate?hl=en&sl=de&tl=en&u=https%3A%2F%2Fthinkpad-forum.de%2Fthreads%2F217551-Boot-Parameter-f%25FCr-E585-bzw-f%25FCr-AMD-Ryzen-allgemein-besonders-ab-Kernel-4-20-x%3Fp%3D2176002%23post2176002**
+
+*ivrs_ioapic: correction IOMMU Adresses in BIOS.*
+
+*libata.force: No hardware reset on the SATA controller. So that the computer wakes up after suspend to ram.*
+
+*iommu=pt: pass through for iommu, without this option, X does not seem to work Kernel 4.20.0.*
 
 
-Source(s): https://forum.level1techs.com/t/lenovo-thinkpad-e585-ryzen-2500u-vega-8-review-impressions-linux-etc/130307
+
+**Sources:** 
+
+https://forum.level1techs.com/t/lenovo-thinkpad-e585-ryzen-2500u-vega-8-review-impressions-linux-etc/130307
 
 https://evilazrael.de/comment/914
 
-All the credits goes the person(s) for making this happen cited in the source. Thanks you.
+https://thinkpad-forum.de/threads/217551-Boot-Parameter-f%FCr-E585-bzw-f%FCr-AMD-Ryzen-allgemein-besonders-ab-Kernel-4-20-x?p=2176002#post2176002
+
+## All the credits goes the persons for making this happen cited in the source. Thank you.
