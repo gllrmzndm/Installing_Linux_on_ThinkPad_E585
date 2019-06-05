@@ -1,5 +1,5 @@
 # Installing Linux on ThinkPad E585
-Descriptive guide for Installing GNU/Linux on your Lenovo Thinkpad E585.
+Descriptive guide for Installing Linux on your Lenovo Thinkpad E585.
 
 Thanks to:
 
@@ -9,4 +9,4 @@ https://evilazrael.de/comment/914
 
 https://thinkpad-forum.de/threads/217551-Boot-Parameter-f%FCr-E585-bzw-f%FCr-AMD-Ryzen-allgemein-besonders-ab-Kernel-4-20-x?p=2176002#post2176002
 
-
+ https://unix.stackexchange.com/questions/469153/what-are-the-implication-of-iommu-soft
