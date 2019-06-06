@@ -1,4 +1,4 @@
-# Installing Linux on ThinkPad E585
+# Installing Linux on ThinkPad E585 and E485.
 Descriptive guide for Installing Linux on your Lenovo Thinkpad E585 and E485.
 This guide is intended to help people installing Linux on their Ryzen-laptops and all credits goes the persons making this happen.
 
