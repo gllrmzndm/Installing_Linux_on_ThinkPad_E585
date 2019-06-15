@@ -2,8 +2,9 @@
 Descriptive guide for Installing Linux on your Lenovo Thinkpad E585 and E485.
 This guide is intended to help people installing Linux on their Ryzen-laptops and all credits goes the persons making this happen.
 
-Thanks to:
+![Thinkpad E585](https://www.tdblog.be/wp-content/uploads/2018/08/27082018-lenovo-blog.png)
 
+**Thanks to:**
 https://forum.level1techs.com/t/lenovo-thinkpad-e585-ryzen-2500u-vega-8-review-impressions-linux-etc/130307
 
 https://evilazrael.de/comment/914
