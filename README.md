@@ -1,3 +1,7 @@
+# Installing Linux on ThinkPad E585 and E485.
+Descriptive guide for Installing Linux on your Lenovo Thinkpad E585 and E485.
+This guide is intended to help people installing Linux on their Ryzen-laptops and all credits goes the persons making this happen.
+
 # Note
 The new BIOS version 1.54 of the Lenovo Thinkpad E585 and Thinkpad E485 made this workaround obsolete and is fixed by Lenovo.
 Get your latest BIOS update over here: https://support.lenovo.com/nl/en/downloads/ds503790
@@ -19,14 +23,6 @@ CHANGES IN THIS RELEASE
 
 ### Source
 https://download.lenovo.com/pccbbs/mobiles/r0uuj74w.txt
-
-
-
-
-
-# Installing Linux on ThinkPad E585 and E485.
-Descriptive guide for Installing Linux on your Lenovo Thinkpad E585 and E485.
-This guide is intended to help people installing Linux on their Ryzen-laptops and all credits goes the persons making this happen.
 
 ![Thinkpad E585](https://www.tdblog.be/wp-content/uploads/2018/08/27082018-lenovo-blog.png)
 
