@@ -1,3 +1,29 @@
+# Note
+The new BIOS version 1.54 of the Lenovo Thinkpad E585 and Thinkpad E485 made this workaround obsolete and is fixed by Lenovo.
+Get your latest BIOS update over here: https://support.lenovo.com/nl/en/downloads/ds503790
+
+## Changes
+
+CHANGES IN THIS RELEASE
+ Version 1.54
+ 
+[Important updates]
+  Nothing.
+
+[New functions or enhancements]
+  Nothing.
+
+[Problem fixes]
+- Sync IOAPICID in IVRS and APIC ACPI tables (Linux).   
+- Enhance to address vulnerability security issue.
+
+### Source
+https://download.lenovo.com/pccbbs/mobiles/r0uuj74w.txt
+
+
+
+
+
 # Installing Linux on ThinkPad E585 and E485.
 Descriptive guide for Installing Linux on your Lenovo Thinkpad E585 and E485.
 This guide is intended to help people installing Linux on their Ryzen-laptops and all credits goes the persons making this happen.
